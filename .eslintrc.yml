@@ -1,6 +1,4 @@
-parserOptions:
-  ecmaVersion: 7
-  jsx: false
+parser: babel-eslint
 
 extends:
   - standard

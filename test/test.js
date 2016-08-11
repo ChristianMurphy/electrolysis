@@ -6,7 +6,7 @@ test.beforeEach(async t => {
   const electronExecutable = process.platform === 'win32' ? 'electron.exe' : 'electron'
   t.context.app = new Application({
     path: path.resolve(__dirname, '..', 'node_modules', 'electron-prebuilt', 'dist', electronExecutable),
-    args: ['../main.js']
+    args: ['../src/main.js']
   })
 
   await t.context.app.start()

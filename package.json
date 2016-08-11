@@ -4,7 +4,7 @@
   "description": "Convert between video formats",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron src/index.html",
     "test": "eslint . && ava"
   },
   "repository": {
