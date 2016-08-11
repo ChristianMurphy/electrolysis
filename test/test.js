@@ -3,8 +3,9 @@ import path from 'path'
 import {Application} from 'spectron'
 
 test.beforeEach(async t => {
+  const electronExecutable = process.platform === 'win32' ? 'electron.exe' : 'electron'
   t.context.app = new Application({
-    path: path.resolve(__dirname, '..', 'node_modules', 'electron-prebuilt', 'dist', 'electron.exe'),
+    path: path.resolve(__dirname, '..', 'node_modules', 'electron-prebuilt', 'dist', electronExecutable),
     args: ['../main.js']
   })
 
