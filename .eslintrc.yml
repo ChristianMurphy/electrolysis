@@ -1,0 +1,19 @@
+parserOptions:
+  ecmaVersion: 7
+  jsx: false
+
+extends:
+  - standard
+  - plugin:ava/recommended
+  - plugin:node/recommended
+
+plugins:
+  - ava
+  - node
+  - promise
+  - standard
+
+settings:
+  node:
+    allowModules:
+      - electron
