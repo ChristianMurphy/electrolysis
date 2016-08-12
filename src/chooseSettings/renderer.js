@@ -4,6 +4,7 @@ const button = document.getElementById('ele-button')
 const progressBar = document.getElementById('ele-progress')
 const toast = document.getElementById('ele-toast')
 const backButton = document.getElementById('ele-back')
+const timeout = 5000
 
 progressBar.addEventListener('mdl-componentupgraded', function () {
   this.MaterialProgress.setProgress(0)
@@ -24,7 +25,7 @@ button.addEventListener('click', () => {
       ffmpeg()
     )
     .on('start', () => {
-      toast.MaterialSnackbar.showSnackbar({message: 'Conversion Started', timeout: 5000})
+      toast.MaterialSnackbar.showSnackbar({message: 'Conversion Started', timeout})
     })
     .on('progress', progress =>
       progressBar.MaterialProgress.setProgress(progress.percent)
@@ -33,11 +34,11 @@ button.addEventListener('click', () => {
       console.log(err)
       button.disabled = false
       progressBar.MaterialProgress.setProgress(0)
-      toast.MaterialSnackbar.showSnackbar({message: 'Files could not be processed', timeout: 5000})
+      toast.MaterialSnackbar.showSnackbar({message: 'Files could not be processed', timeout})
     })
     .on('end', () => {
       button.disabled = false
-      toast.MaterialSnackbar.showSnackbar({message: 'Conversion Complete', timeout: 5000})
+      toast.MaterialSnackbar.showSnackbar({message: 'Conversion Complete', timeout})
     })
     .run()
 })
