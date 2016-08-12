@@ -12,7 +12,7 @@ holder.ondragover = holder.ondragleave = holder.ondragend = () => false
 
 // Captures the drop event
 // Stores file list to sessionStorage
-// Then changes views
+// Then changes view
 holder.ondrop = event => {
   event.preventDefault()
   sessionStorage.files = event.dataTransfer.files.map(file => file.path)
@@ -26,6 +26,7 @@ button.addEventListener('click', () => ipcRenderer.send('open-file-dialog'))
 
 // Listens for when files have been selected
 // Stores file list to sessionStorage
+// Then changes view
 ipcRenderer.on('selected-files', (event, files) => {
   sessionStorage.files = files
   ipcRenderer.send('goto-view', 'chooseSettings')
