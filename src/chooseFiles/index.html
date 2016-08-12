@@ -5,12 +5,13 @@
     <title>
       Electrolysis
     </title>
-    <link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">
-    <link rel="stylesheet" href="custom.css">
-    <script src="../node_modules/material-design-lite/material.min.js"></script>
+
+    <link rel="stylesheet" href="../../node_modules/material-design-lite/material.min.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="../../node_modules/material-design-lite/material.min.js"></script>
   </head>
-  <body>
+  <body id="ele-holder">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-800">
         <div class="mdl-layout__header-row">
@@ -24,14 +25,14 @@
 
       <main class="ele-main mdl-layout__content">
         <div class="mdl-grid">
-          <div class="ele-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+          <div class="ele-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
             <h3>
               Choose a file to convert
             </h3>
             <p>
-              Click choose file or drag an drop the file onto this window.
+              Click choose file or drag and drop the file onto this window.
             </p>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+            <button id="ele-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
               Choose File
             </button>
           </div>
