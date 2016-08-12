@@ -43,5 +43,5 @@ test('file chooser loads', async t => {
 
   const win = app.browserWindow
   t.is(await win.getTitle(), 'Electrolysis')
-  t.is(await app.client.getText('#ele-button'), 'CHOOSE FILE')
+  t.is(await app.client.getText('#ele-button'), 'CHOOSE FILES')
 })

@@ -7,20 +7,26 @@ const button = document.getElementById('ele-button')
  * and stores the file paths to sessionStorage
  */
 
-// prevent default events on these actions
+// Prevents default events on these actions
 holder.ondragover = holder.ondragleave = holder.ondragend = () => false
 
-// capture the drop event
+// Captures the drop event
+// Stores file list to sessionStorage
+// Then changes views
 holder.ondrop = event => {
   event.preventDefault()
   sessionStorage.files = event.dataTransfer.files.map(file => file.path)
+  ipcRenderer.send('goto-view', 'chooseSettings')
   return false
 }
 
-// capture click event
+// Capture clicks event
+// Opens a system dialog
 button.addEventListener('click', () => ipcRenderer.send('open-file-dialog'))
 
-// files selected from dialog
+// Listens for when files have been selected
+// Stores file list to sessionStorage
 ipcRenderer.on('selected-files', (event, files) => {
   sessionStorage.files = files
+  ipcRenderer.send('goto-view', 'chooseSettings')
 })
