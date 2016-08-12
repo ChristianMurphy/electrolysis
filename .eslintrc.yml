@@ -11,6 +11,26 @@ plugins:
   - promise
   - standard
 
+rules:
+  # Prefer new JavaScript syntax
+  arrow-body-style: error
+  arrow-parens: [error, as-needed]
+  arrow-spacing: error
+  no-confusing-arrow: error
+  no-const-assign: error
+  no-useless-computed-key: error
+  no-useless-rename: error
+  no-var: error
+  object-shorthand: error
+  prefer-arrow-callback: error
+  prefer-const: error
+  prefer-rest-params: error
+  prefer-spread: error
+  prefer-template: error
+  require-yield: error
+  rest-spread-spacing: error
+  template-curly-spacing: error
+
 settings:
   node:
     allowModules:
