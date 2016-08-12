@@ -1,4 +1,4 @@
-const {ipcRenderer} = require('electron')
+const {ipcRenderer: ipc} = require('electron')
 const holder = document.getElementById('ele-holder')
 const button = document.getElementById('ele-button')
 
@@ -16,18 +16,18 @@ holder.ondragover = holder.ondragleave = holder.ondragend = () => false
 holder.ondrop = event => {
   event.preventDefault()
   sessionStorage.files = event.dataTransfer.files.map(file => file.path)
-  ipcRenderer.send('goto-view', 'chooseSettings')
+  ipc.send('goto-view', 'chooseSettings')
   return false
 }
 
 // Capture clicks event
 // Opens a system dialog
-button.addEventListener('click', () => ipcRenderer.send('open-file-dialog'))
+button.addEventListener('click', () => ipc.send('open-file-dialog'))
 
 // Listens for when files have been selected
 // Stores file list to sessionStorage
 // Then changes view
-ipcRenderer.on('selected-files', (event, files) => {
+ipc.on('selected-files', (event, files) => {
   sessionStorage.files = files
-  ipcRenderer.send('goto-view', 'chooseSettings')
+  ipc.send('goto-view', 'chooseSettings')
 })

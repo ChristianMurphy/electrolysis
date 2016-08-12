@@ -1,8 +1,8 @@
 // 'app' controls application life.
 // 'BrowserWindow' creates a native browser window.
-// 'ipcMain' listens for events sent from rendered windows.
+// 'ipc' listens to messages from and sends messages to rendered windows.
 // 'dialog' creates system dialogs.
-const {app, BrowserWindow, ipcMain, dialog} = require('electron')
+const {app, BrowserWindow, ipcMain: ipc, dialog} = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -55,10 +55,10 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 
 // Loads a view in current window
-ipcMain.on('goto-view', (event, folder) => mainWindow.loadURL(`file://${__dirname}/${folder}/index.html`))
+ipc.on('goto-view', (event, folder) => mainWindow.loadURL(`file://${__dirname}/${folder}/index.html`))
 
 // Opens a file selector dialog
-ipcMain.on('open-file-dialog', event => {
+ipc.on('open-file-dialog', event => {
   dialog.showOpenDialog(
     {
       properties: ['openFile', 'multiSelections']
