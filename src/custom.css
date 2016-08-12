@@ -1,0 +1,16 @@
+.ele-content {
+  border-radius: 2px;
+  padding: 80px 56px;
+}
+
+.ele-ribbon {
+  width: 100%;
+  height: 40vh;
+  background-color: #3F51B5;
+  flex-shrink: 0;
+}
+
+.ele-main {
+  margin-top: -35vh;
+  flex-shrink: 0;
+}
