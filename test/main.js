@@ -16,7 +16,7 @@ test.afterEach.always(async t => {
   await t.context.app.stop()
 })
 
-test(async t => {
+test('window loads', async t => {
   const app = t.context.app
   await app.client.waitUntilWindowLoaded()
 
@@ -30,4 +30,19 @@ test(async t => {
   const {width, height} = await win.getBounds()
   t.true(width > 0)
   t.true(height > 0)
+})
+
+test.afterEach.always(async t => {
+  try {
+    await t.context.app.stop()
+  } catch (err) {}
+})
+
+test('file chooser loads', async t => {
+  const app = t.context.app
+  await app.client.waitUntilWindowLoaded()
+
+  const win = app.browserWindow
+  t.is(await win.getTitle(), 'Electrolysis')
+  t.is(await app.client.getText('#ele-button'), 'CHOOSE FILE')
 })
