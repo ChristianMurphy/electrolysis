@@ -15,7 +15,7 @@ holder.ondragover = holder.ondragleave = holder.ondragend = () => false
 // Then changes view
 holder.ondrop = event => {
   event.preventDefault()
-  sessionStorage.files = event.dataTransfer.files.map(file => file.path)
+  sessionStorage.files = JSON.stringify(event.dataTransfer.files.map(file => file.path))
   ipc.send('goto-view', 'chooseSettings')
   return false
 }
@@ -28,6 +28,6 @@ button.addEventListener('click', () => ipc.send('open-file-dialog'))
 // Stores file list to sessionStorage
 // Then changes view
 ipc.on('selected-files', (event, files) => {
-  sessionStorage.files = files
+  sessionStorage.files = JSON.stringify(files)
   ipc.send('goto-view', 'chooseSettings')
 })

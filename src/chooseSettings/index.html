@@ -11,10 +11,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script defer src="../../node_modules/material-design-lite/material.min.js"></script>
   </head>
-  <body id="ele-holder">
+  <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-800">
-        <div class="mdl-layout__header-row">
+        <div id="ele-back" class="mdl-layout__header-row">
+          <button class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">
+              arrow_back
+            </i>
+          </button>
           <span class="mdl-layout-title">
             Settings
           </span>
@@ -27,17 +32,45 @@
         <div class="mdl-grid">
           <div class="ele-content mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
             <h3>
-              Choose Conversion Settings
+              Choose Output
             </h3>
             <p>
-              Click choose file or drag and drop the file onto this window.
+              Select output format for video.
             </p>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-gif">
+              <input type="radio" id="option-gif" class="mdl-radio__button" name="format" value="gif" checked>
+              <span class="mdl-radio__label">
+                gif
+              </span>
+            </label>
+            <br>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-mp4">
+              <input type="radio" id="option-mp4" class="mdl-radio__button" name="format" value="mp4">
+              <span class="mdl-radio__label">
+                mp4
+              </span>
+            </label>
+            <br>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-avi">
+              <input type="radio" id="option-avi" class="mdl-radio__button" name="format" value="avi">
+              <span class="mdl-radio__label">
+                avi
+              </span>
+            </label>
+            <br>
+            <div id="ele-progress" class="mdl-progress mdl-js-progress"></div>
+            <br>
             <button id="ele-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-              Choose File
+              Convert
             </button>
           </div>
         </div>
       </main>
+    </div>
+
+    <div id="ele-toast" class="mdl-js-snackbar mdl-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
     </div>
   </body>
 
