@@ -7,3 +7,17 @@
 > Convert between video formats
 
 Electrolysis is built using [electron](http://electron.atom.io/) and [ffmpeg](https://ffmpeg.org/)
+
+## Installation
+
+1.  Install [Node.js](https://nodejs.org/en/download/current/)
+2.  Install [ffmpeg](https://ffmpeg.org/download.html)
+3.  Install [git](https://git-scm.com/downloads)
+4.  Open a command line or terminal
+5.  Run `git clone https://github.com/ChristianMurphy/electrolysis`
+6.  Run `cd electrolysis`
+7.  Run `npm install`
+
+## Starting
+
+1.  Run `npm start`
