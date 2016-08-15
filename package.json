@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron src/main.js",
     "start-dev": "cross-env ELECTRON_ENV=dev electron src/main.js",
-    "test": "remark -q -u remark-lint *.md && eslint . && ava"
+    "test": "remark -q --no-stdout -u remark-lint *.md && eslint . && ava"
   },
   "repository": {
     "type": "git",

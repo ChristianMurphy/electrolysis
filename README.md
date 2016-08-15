@@ -20,4 +20,6 @@ Electrolysis is built using [electron](http://electron.atom.io/) and [ffmpeg](ht
 
 ## Starting
 
-1.  Run `npm start`
+1.  Open a command line or terminal
+2.  Navigate to the folder with `electrolysis`
+3.  Run `npm start`
