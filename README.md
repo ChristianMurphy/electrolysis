@@ -23,3 +23,17 @@ Electrolysis is built using [electron](http://electron.atom.io/) and [ffmpeg](ht
 1.  Open a command line or terminal
 2.  Navigate to the folder with `electrolysis`
 3.  Run `npm start`
+
+---
+
+## Developer Setup
+
+1.  Follow [installation instructions](#installation)
+2.  Run `npm run start-dev`
+3.  In the console at the side of the window enter `require('devtron').install()`
+
+## Testing
+
+1.  Open a command line or terminal
+2.  Navigate to the folder with `electrolysis`
+3.  Run `npm test`
